@@ -1,0 +1,23 @@
+variables:
+  PRE_COMMIT_AUTO_FIX: "" # disable autofix for all pipelines
+  PRE_COMMIT_DEBUG: "true"
+  PRE_COMMIT_DEDUPLICATE_MR_AND_BRANCH: "false"
+include:
+# pre-commit is expected to be run locally
+- local: '.gitlab-ci.d/pre-commit-autofix.yml'
+
+# - local: '.gitlab-ci.d/ruff_report.yml'
+pytest:
+  image: micr.cloud.mioffice.cn/ci-basics/pytest:4dod
+  stage: test
+  script:
+  - source /usr/local/share/venv/bin/activate
+  - echo "Running tests"
+  - scripts/run_tests.sh
+  artifacts:
+    name: "pytest_results-${CI_COMMIT_REF_SLUG}-${CI_COMMIT_SHORT_SHA}"
+    paths:
+    - results
+    expire_in: 3 days
+  dependencies:
+  - pytest

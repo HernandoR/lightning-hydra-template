@@ -1,0 +1,48 @@
+# Source files
+# ============
+*.pxd text diff=python
+*.py text diff=python
+*.py3 text diff=python
+*.pyw text diff=python
+*.pyx text diff=python
+*.pyz text diff=python
+*.pyi text diff=python
+
+# Binary files
+# ============
+*.db binary
+*.p binary
+*.pkl binary
+*.pickle binary
+*.pyc binary export-ignore
+*.pyo binary export-ignore
+*.pyd binary
+
+# Jupyter notebook
+*.ipynb text eol=lf
+
+# locks
+*.lock binary linguist-generated=true -text !diff
+
+# compressed files use lfs
+*.zip filter=lfs diff=lfs merge=lfs -text
+*.tar filter=lfs diff=lfs merge=lfs -text
+*.tar.gz filter=lfs diff=lfs merge=lfs -text
+*.tgz filter=lfs diff=lfs merge=lfs -text
+*.bz2 filter=lfs diff=lfs merge=lfs -text
+
+# weight and serized
+*.h5 filter=lfs diff=lfs merge=lfs -text
+*.npz filter=lfs diff=lfs merge=lfs -text
+*.npy filter=lfs diff=lfs merge=lfs -text
+*.pkl filter=lfs diff=lfs merge=lfs -text
+*.joblib filter=lfs diff=lfs merge=lfs -text
+*.sav filter=lfs diff=lfs merge=lfs -text
+*.model filter=lfs diff=lfs merge=lfs -text
+*.ckpt filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.pt filter=lfs diff=lfs merge=lfs -text
+*.onnx filter=lfs diff=lfs merge=lfs -text
+*.pb filter=lfs diff=lfs merge=lfs -text
+*.tflite filter=lfs diff=lfs merge=lfs -text
+*.pbtxt filter=lfs diff=lfs merge=lfs -text

@@ -1,20 +1,64 @@
-[tool.pytest.ini_options]
-addopts = [
-  "--color=yes",
-  "--durations=0",
-  "--strict-markers",
-  "--doctest-modules",
+# [build-system]
+# requires = [
+#     "setuptools",
+#     "setuptools-scm",
+#     "pybind11",
+#     "jinja2",
+#     "cython",
+#     "torch",
+#     "numpy",
+# ]
+# build-backend = "setuptools.build_meta"
+
+[project]
+name = "pytorch-lightning-hydra-template"
+version = "0.0.1"
+description = ""
+readme = "README.md"
+authors = [{ name = "Liu zhen", email = "liuzhen19@xiaomi.com" }]
+requires-python = ">=3.10, <3.12"
+# packages = [{ include = "geotransformer" }]
+
+dependencies = [
+# --------- pytorch --------- #
+"torch>=2.0.0",
+"torchvision>=0.15.0",
+"lightning>=2.0.0",
+"torchmetrics>=0.11.4",
+# --------- hydra --------- #
+"hydra-core==1.3.2",
+"hydra-colorlog==1.2.0",
+"hydra-optuna-sweeper==1.2.0",
+# --------- loggers --------- #
+"mlflow>=0.0.1",
+# --------- others --------- #
+"rootutils>=0.0.1",       # standardizing the project root setup
+"pre-commit>=0.0.1",      # hooks for applying linters on commit
+"rich>=0.0.1",            # beautiful text formatting in terminal
+"pytest>=0.0.1",          # tests
+"allure-pytest>=0.0.1"    # allure report
+# sh            # for running bash commands in some tests (linux/macos only)
 ]
-filterwarnings = [
-  "ignore::DeprecationWarning",
-  "ignore::UserWarning",
-]
-log_cli = "True"
-markers = [
-  "slow: slow tests",
-]
-minversion = "6.0"
-testpaths = "tests/"
+# no isolation for setuptools
+[tool.setuptools]
+packages = ["geotransformer"]
+
+
+#--index-strategy unsafe-best-match
+[tool.uv]
+index-strategy = "unsafe-best-match"
+no-build-isolation-package = ["pyyaml"]
+
+
+[[tool.uv.index]]
+name = "tuna"
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+default = true
+
+
+[dependency-groups]
+dev = ["orjson>=3.10.15", "pre-commit>=4.1.0", "viztracer>=1.0.2"]
+
 
 [tool.coverage.report]
 exclude_lines = [
