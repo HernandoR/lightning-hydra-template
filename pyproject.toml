@@ -35,7 +35,7 @@ dependencies = [
 "rootutils>=0.0.1",       # standardizing the project root setup
 "pre-commit>=0.0.1",      # hooks for applying linters on commit
 "rich>=15.0.0",            # beautiful text formatting in terminal
-"pytest>=0.0.1",          # tests
+"pytest>=9.0.3",          # tests
 "allure-pytest>=0.0.1"    # allure report
 # sh            # for running bash commands in some tests (linux/macos only)
 ]
