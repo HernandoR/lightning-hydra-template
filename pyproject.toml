@@ -33,7 +33,7 @@ dependencies = [
 "mlflow>=0.0.1",
 # --------- others --------- #
 "rootutils>=0.0.1",       # standardizing the project root setup
-"pre-commit>=0.0.1",      # hooks for applying linters on commit
+"pre-commit>=4.5.1",      # hooks for applying linters on commit
 "rich>=15.0.0",            # beautiful text formatting in terminal
 "pytest>=0.0.1",          # tests
 "allure-pytest>=0.0.1"    # allure report
@@ -57,7 +57,7 @@ default = true
 
 
 [dependency-groups]
-dev = ["orjson>=3.10.15", "pre-commit>=4.1.0", "viztracer>=1.0.2"]
+dev = ["orjson>=3.10.15", "pre-commit>=4.5.1", "viztracer>=1.0.2"]
 
 
 [tool.coverage.report]
