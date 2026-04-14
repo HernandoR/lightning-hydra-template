@@ -30,7 +30,7 @@ dependencies = [
 "hydra-colorlog==1.2.0",
 "hydra-optuna-sweeper==1.2.0",
 # --------- loggers --------- #
-"mlflow>=0.0.1",
+"mlflow>=3.11.1",
 # --------- others --------- #
 "rootutils>=0.0.1",       # standardizing the project root setup
 "pre-commit>=4.5.1",      # hooks for applying linters on commit
